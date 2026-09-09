@@ -126,7 +126,7 @@ class FnfnApp(tk.Tk):
 
         # ── 로그 ───────────────────────────────────
         frm_log = ttk.LabelFrame(self, text="  📋 실행 결과  ")
-        frm_log.pack(fill="both", expand=True, **PAD, pady=(4, 14))
+        frm_log.pack(fill="both", expand=True, padx=PADX, pady=(4, 14))
 
         self.log_box = scrolledtext.ScrolledText(
             frm_log, height=10, state="disabled",
