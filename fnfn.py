@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 fnfn GUI - Folder Names From File Names
 파일 이름을 기반으로 빈 폴더들을 자동으로 생성합니다. (GUI 버전)
@@ -78,11 +78,11 @@ class FnfnApp(tk.Tk):
         self.geometry(f"{w}x{h}+{(sw-w)//2}+{(sh-h)//2}")
 
     def _build_ui(self):
-        PAD = dict(padx=12, pady=6)
+        PADX = 12
 
         # ── 원본 폴더 ──────────────────────────────
         frm_src = ttk.LabelFrame(self, text="  📂 원본 폴더 (파일이 있는 폴더)  ")
-        frm_src.pack(fill="x", **PAD, pady=(14, 4))
+        frm_src.pack(fill="x", padx=PADX, pady=(14, 4))
 
         self.src_var = tk.StringVar()
         ttk.Entry(frm_src, textvariable=self.src_var, width=50).pack(
@@ -92,7 +92,7 @@ class FnfnApp(tk.Tk):
 
         # ── 출력 폴더 ──────────────────────────────
         frm_out = ttk.LabelFrame(self, text="  📁 폴더 생성 위치 (비워두면 원본과 동일)  ")
-        frm_out.pack(fill="x", **PAD, pady=4)
+        frm_out.pack(fill="x", padx=PADX, pady=4)
 
         self.out_var = tk.StringVar()
         ttk.Entry(frm_out, textvariable=self.out_var, width=50).pack(
@@ -102,7 +102,7 @@ class FnfnApp(tk.Tk):
 
         # ── 옵션 ───────────────────────────────────
         frm_opt = ttk.LabelFrame(self, text="  ⚙️ 옵션  ")
-        frm_opt.pack(fill="x", **PAD, pady=4)
+        frm_opt.pack(fill="x", padx=PADX, pady=4)
 
         self.ext_var = tk.BooleanVar(value=False)
         self.rec_var = tk.BooleanVar(value=False)
@@ -117,7 +117,7 @@ class FnfnApp(tk.Tk):
 
         # ── 버튼 ───────────────────────────────────
         frm_btn = ttk.Frame(self)
-        frm_btn.pack(fill="x", padx=12, pady=6)
+        frm_btn.pack(fill="x", padx=PADX, pady=6)
 
         ttk.Button(frm_btn, text="✅  폴더 생성 실행", command=self._run,
                    style="Accent.TButton").pack(side="left", ipadx=10, ipady=4)
